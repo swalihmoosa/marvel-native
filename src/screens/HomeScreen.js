@@ -1,3 +1,4 @@
+import react, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 
@@ -5,6 +6,8 @@ var logo = require ('../../assets/images/Comics-Iron-America-icon.png');
 
 
 export default function HomeScreen() {
+    const [characters, setCharacters] = useState([]);
+
     return (
         <ScrollView >
             <StatusBar style="auto" />
