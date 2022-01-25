@@ -1,6 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView, Image, FlatList, Dimensions } from 'react-native';
+import CharactersCard from '../components/CharactersCard';
 
 var logo = require ('../../assets/images/Comics-Iron-America-icon.png');
 
@@ -22,9 +23,8 @@ export default function HomeScreen() {
 			    <Text style={styles.loginbutton}>Logout</Text>
 		    </View>
 
-            <FlatList data={characters} horizontal keyExtractor={(item)=> item} renderItem={({item, index})=>{
-                return <View style={styles.test} ></View>
-            }} ></FlatList>
+            <FlatList data={characters} horizontal keyExtractor={(item)=> item} renderItem={({item})=> <CharactersCard /> } 
+            />
 
         </ScrollView>
     );
