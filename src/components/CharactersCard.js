@@ -5,31 +5,35 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 export default function CharactersCard({title, thumbnail, extension}) {
 
     return (
-        <View style={styles.container} >
+        <View style={styles.maincontainer} >
+            <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
             <Text style={styles.charactertitle} >
                 {title}
             </Text>
-            <Text style={styles.charactertitle} >
-                {thumbnail}
-            </Text>
-            <Text style={styles.charactertitle} >
-                {extension}
-            </Text>
-            <Text style={styles.charactertitle} >
-            {thumbnail}.{extension}
-            </Text>
-            <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    maincontainer :{
+        width: 400,
+        height :540,
+        backgroundColor : 'transparent',
+        marginLeft:20,
+        borderRadius:20,
+    },
     container :{
         width: 340,
         height :440,
         backgroundColor : 'red',
         marginLeft:20,
+        marginBottom:10,
         borderRadius:20,
         padding:10,
-    }
+    },
+    charactertitle :{
+        fontSize:20,
+        textAlign:'center',
+        fontWeight:'900',
+    },
 })
