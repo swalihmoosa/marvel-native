@@ -2,12 +2,23 @@ import react from 'react';
 import { Text, StyleSheet, View, Image } from 'react-native';
 
 
-export default function CharactersCard() {
+export default function CharactersCard({title, thumbnail, extension}) {
+
     return (
         <View style={styles.container} >
             <Text style={styles.charactertitle} >
-                ashgdhgd
+                {title}
             </Text>
+            <Text style={styles.charactertitle} >
+                {thumbnail}
+            </Text>
+            <Text style={styles.charactertitle} >
+                {extension}
+            </Text>
+            <Text style={styles.charactertitle} >
+            {thumbnail}.{extension}
+            </Text>
+            <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
         </View>
     )
 }
