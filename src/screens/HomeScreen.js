@@ -35,6 +35,8 @@ export default function HomeScreen() {
 			    <Text style={styles.loginbutton}>Logout</Text>
 		    </View>
 
+            <Text style={styles.welcome} >Welcome</Text>
+            <Text style={styles.explore} >Explore the Famous Marvel Characters</Text>
             <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=> <CharactersCard title = {item.name} thumbnail = {item.thumbnail.path} 
             extension={item.thumbnail.extension} /> } 
             />
@@ -80,4 +82,18 @@ const styles = StyleSheet.create({
 		justifyContent:'center',
         width : setWidth(23),
 	},
+    explore : {
+        fontSize: 30,
+        color: '#9292ed',
+        fontWeight: '900',
+        textAlign:'center',
+        marginBottom:20,
+    },
+    welcome : {
+        fontSize: 30,
+        color: 'red',
+        fontWeight: '900',
+        textAlign:'center',
+        marginBottom:10,
+    }
 });
