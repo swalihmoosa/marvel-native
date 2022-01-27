@@ -2,7 +2,7 @@ import react from 'react';
 import { Text, StyleSheet, View, Image } from 'react-native';
 
 
-export default function CharactersCard({title, thumbnail, extension, onPress}) {
+export default function ComicsCard({title, thumbnail, extension, onPress}) {
 
     return (
         <View style={styles.maincontainer} onPress={onPress} >
@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
         backgroundColor : 'transparent',
         marginLeft:20,
         borderRadius:20,
-        // backgroundColor:'red',
     },
     container :{
         width: 360,
