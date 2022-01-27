@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         borderRadius:20,
     },
     container :{
-        width: 340,
+        width: 400,
         height :440,
         backgroundColor : 'red',
         marginLeft:20,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         padding:10,
     },
     charactertitle :{
-        fontSize:20,
+        fontSize:25,
         textAlign:'center',
         fontWeight:'900',
     },
