@@ -1,8 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, Image, FlatList, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, FlatList, Dimensions, Button } from 'react-native';
 import axios from 'axios';
-import { NavigationContainer } from '@react-navigation/native';
 import CharactersCard from '../components/CharactersCard';
 import ComicsCard from '../components/ComicsCard';
 
@@ -13,7 +12,7 @@ const {width, height} = Dimensions.get("screen")
 const setWidth = (w) => (width / 100) * w
 
 
-export default function HomeScreen(navigation) {
+export default function HomeScreen({navigation}) {
     const [characters, setCharacters] = useState([]);
     const [comics, setComics] = useState([]);
 
@@ -38,19 +37,28 @@ export default function HomeScreen(navigation) {
         
     }, [])
 
+    const characterNavigation = () =>{
+        console.log("press");
+        alert("kasd")
+    }
+
     return (
         <ScrollView >
             <StatusBar style="auto" />
 
-            <View style={styles.headercontainer}>
+            <View style={styles.headercontainer} >
 			    <Image source={logo} style={styles.logoimage} />
 			    <Text style={styles.loginbutton}>Logout</Text>
 		    </View>
 
+            <Button onPress={() => { navigation.navigate("character");}}
+                title="Press Me"
+            />
+
             <Text style={styles.welcome} >Welcome</Text>
-            <Text style={styles.explore} >Explore the Famous Marvel Characters</Text>
-            <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <CharactersCard title = {item.name} thumbnail = {item.thumbnail.path} 
-            extension = {item.thumbnail.extension} onPress = {() => navigation.navigate("character")} /> )}
+            <Text style={styles.explore}  >Explore the Famous Marvel Characters</Text>
+            <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <CharactersCard onPress={() => { navigation.navigate("character");}} title = {item.name} thumbnail = {item.thumbnail.path} 
+            extension = {item.thumbnail.extension} /> )}
             />
 
             <Text style={styles.explore} >Explore the Famous Marvel Comics</Text>

@@ -1,16 +1,18 @@
 import react from 'react';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 
 
 export default function CharactersCard({title, thumbnail, extension, onPress}) {
 
     return (
-        <View style={styles.maincontainer} onPress={onPress} >
-            <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
-            <Text style={styles.charactertitle} >
-                {title}
-            </Text>
-        </View>
+        <TouchableOpacity  onPress={onPress} >
+            <View style={styles.maincontainer} >
+                <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
+                <Text style={styles.charactertitle} >
+                    {title}
+                </Text>
+            </View>
+        </TouchableOpacity>
     )
 }
 
@@ -21,12 +23,10 @@ const styles = StyleSheet.create({
         backgroundColor : 'transparent',
         marginLeft:20,
         borderRadius:20,
-        // backgroundColor:'red',
     },
     container :{
         width: 360,
         height :440,
-        backgroundColor : 'red',
         marginLeft:20,
         marginBottom:10,
         borderRadius:20,
