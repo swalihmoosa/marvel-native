@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Character() {
+export default function Character({route, navigation}) {
+  const {CharacterId} = route.params
+
   return (
     <View style={styles.container}>
-      <Text>Character</Text>
+      <Text>Character{CharacterId}</Text>
       <StatusBar style="auto" />
     </View>
   );
