@@ -37,11 +37,6 @@ export default function HomeScreen({navigation}) {
         
     }, [])
 
-    const characterNavigation = () =>{
-        console.log("press");
-        alert("kasd")
-    }
-
     return (
         <ScrollView >
             <StatusBar style="auto" />
@@ -51,10 +46,6 @@ export default function HomeScreen({navigation}) {
 			    <Text style={styles.loginbutton}>Logout</Text>
 		    </View>
 
-            <Button onPress={() => { navigation.navigate("character");}}
-                title="Press Me"
-            />
-
             <Text style={styles.welcome} >Welcome</Text>
             <Text style={styles.explore}  >Explore the Famous Marvel Characters</Text>
             <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <CharactersCard onPress={() => { navigation.navigate("character");}} title = {item.name} thumbnail = {item.thumbnail.path} 
@@ -62,7 +53,7 @@ export default function HomeScreen({navigation}) {
             />
 
             <Text style={styles.explore} >Explore the Famous Marvel Comics</Text>
-            <FlatList data={comics} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <ComicsCard title = {item.title} thumbnail = {item.thumbnail.path} 
+            <FlatList data={comics} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <ComicsCard onPress={() => { navigation.navigate("comic");}} title = {item.title} thumbnail = {item.thumbnail.path} 
             extension = {item.thumbnail.extension} /> )}
             />
 
