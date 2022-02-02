@@ -31,7 +31,7 @@ export default function Character({route, navigation}) {
 
         <Text style={styles.explore}  >Here is Your Single Character</Text>
         <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <SingleCharacterCard title = {item.name} thumbnail = {item.thumbnail.path} 
-        extension = {item.thumbnail.extension} description = {item.description} /> )}
+        extension = {item.thumbnail.extension} description = {item.description} comics={item.comics.items} /> )}
         />
         
     </ScrollView>
