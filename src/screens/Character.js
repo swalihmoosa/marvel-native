@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
         width:'90%',
         marginLeft:'auto',
         marginRight:'auto',
-        color:'red',
         padding:'10%',
         justifyContent:'space-between',
         flexDirection:'row',
