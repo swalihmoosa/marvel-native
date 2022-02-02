@@ -2,7 +2,7 @@ import react from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 
 
-export default function SingleCharacterCard({title, thumbnail, extension, onPress}) {
+export default function SingleCharacterCard({title, thumbnail, extension, description, onPress}) {
 
     return (
         <TouchableOpacity  onPress={onPress} >
@@ -10,6 +10,9 @@ export default function SingleCharacterCard({title, thumbnail, extension, onPres
                 <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
                 <Text style={styles.charactertitle} >
                     {title}
+                </Text>
+                <Text style={styles.charactertitle} >
+                    {description}
                 </Text>
             </View>
         </TouchableOpacity>
