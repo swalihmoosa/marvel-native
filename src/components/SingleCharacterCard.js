@@ -2,7 +2,7 @@ import react from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 
 
-export default function ComicsCard({title, thumbnail, extension, onPress}) {
+export default function SingleCharacterCard({title, thumbnail, extension, onPress}) {
 
     return (
         <TouchableOpacity  onPress={onPress} >
