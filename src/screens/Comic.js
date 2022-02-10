@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { StatusBar } from 'expo-status-bar';
 import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, FlatList } from 'react-native';
 import SingleComicCard from '../components/SingleComicCard';
@@ -11,7 +10,6 @@ export default function Character({route, navigation}) {
   const [comics, setComics] = useState([]);
 
   useEffect(()=>{
-    console.log("comics");
     axios
     .get(`https://gateway.marvel.com:443/v1/public/comics/${ComicId}?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
     .then((response) => {
