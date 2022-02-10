@@ -2,7 +2,7 @@ import react from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 
 
-export default function SingleCharacterCard({title, thumbnail, extension, description, comics}) {
+export default function SingleComicCard({title, thumbnail, extension, description, characters}) {
     return (
         <View style={styles.maincontainer} >
             <Image style={styles.container} source={{uri: `${thumbnail}.${extension}` }} />
@@ -13,8 +13,8 @@ export default function SingleCharacterCard({title, thumbnail, extension, descri
                 {description}
             </Text>
 
-            {comics.map((item) => (
-                <Text style={styles.charactercomics} key={item.name} >
+            {characters.map((item) => (
+                <Text style={styles.charactercomics} >
                     {item.name}
                 </Text>
             ))}

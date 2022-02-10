@@ -48,12 +48,14 @@ export default function HomeScreen({navigation}) {
 
             <Text style={styles.welcome} >Welcome</Text>
             <Text style={styles.explore}  >Explore the Famous Marvel Characters</Text>
-            <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <CharactersCard onPress={() => { navigation.navigate("character", {CharacterId:item.id});}} title = {item.name} thumbnail = {item.thumbnail.path} 
+            <FlatList data={characters} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <CharactersCard 
+            onPress={() => { navigation.navigate("character", {CharacterId:item.id});}} title = {item.name} thumbnail = {item.thumbnail.path} 
             extension = {item.thumbnail.extension} /> )}
             />
 
             <Text style={styles.explore} >Explore the Famous Marvel Comics</Text>
-            <FlatList data={comics} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <ComicsCard onPress={() => { navigation.navigate("comic");}} title = {item.title} thumbnail = {item.thumbnail.path} 
+            <FlatList data={comics} horizontal keyExtractor={(item)=> item.id} renderItem={({item})=>( <ComicsCard 
+            onPress={() => { navigation.navigate("comic", {ComicId:item.id});}} title = {item.title} thumbnail = {item.thumbnail.path} 
             extension = {item.thumbnail.extension} /> )}
             />
 
